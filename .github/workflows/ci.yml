@@ -61,4 +61,4 @@ jobs:
       - run: npm ci
       - run: cp .env.test .env
       - run: npx tsx src/db/migrate.ts
-      - run: npm run test -- --testPathPattern=integration
+      - run: npm run test:integration
