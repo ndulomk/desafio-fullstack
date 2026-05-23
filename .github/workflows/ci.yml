@@ -17,8 +17,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: corepack enable && pnpm install --frozen-lockfile
-      - run: pnpm run lint
+      - run: npm ci
+      - run: npm run lint
       - run: npx tsc --noEmit
 
   unit-tests:
@@ -31,8 +31,8 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: corepack enable && pnpm install --frozen-lockfile
-      - run: pnpm run test -- --testPathIgnorePatterns=integration
+      - run: npm ci
+      - run: npm run test -- --testPathIgnorePatterns=integration
 
   integration-tests:
     runs-on: ubuntu-latest
@@ -58,7 +58,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: corepack enable && pnpm install --frozen-lockfile
+      - run: npm ci
       - run: cp .env.test .env
       - run: npx tsx src/db/migrate.ts
-      - run: pnpm run test -- --testPathPattern=integration
+      - run: npm run test -- --testPathPattern=integration
