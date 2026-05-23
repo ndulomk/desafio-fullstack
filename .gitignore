@@ -1,0 +1,25 @@
+# Root
+.env
+.env.local
+!.env.example
+
+# Node
+node_modules/
+.pnpm-store/
+*.log
+npm-debug.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Misc
+*.pid
+*.seed
+*.pid.lock
